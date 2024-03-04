@@ -1,0 +1,18 @@
+:root {
+  --background-dark: #2b272f;
+  --text-light: #fefffe;
+  --accent-red: #cb0001;
+  --highlight-red: #f70101;
+  --accent-maroon: #b80113;
+  --secondary-background: #898292;
+  --button-hover: #8c151c;
+  --cursor-color: #a99e94;
+}
+body {
+  font-family: "Nunito" !important;
+  font-weight: 600 !important;
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--background-dark) !important;
+  color: var(--text-light) !important;
+}

@@ -1,0 +1,29 @@
+.cursor {
+  position: fixed;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 10px 25px 10px;
+  border-color: transparent transparent var(--cursor-color) transparent;
+  pointer-events: none !important;
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+}
+
+.cursor:hover {
+  background-color: var(--cursor-hover-effect);
+}
+
+@media only screen and (max-width: 767px) {
+  .cursor {
+    display: none;
+  }
+}
+
+body {
+  cursor: none;
+}
+
+button:hover {
+  cursor: none !important;
+}

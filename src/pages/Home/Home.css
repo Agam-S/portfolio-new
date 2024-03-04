@@ -1,0 +1,34 @@
+.home h1 {
+  font-size: xxx-large;
+  font-weight: 800 !important;
+}
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: var(--accent-red);
+  margin-top: 20px;
+  z-index: -1;
+}
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+}
+
+.textSlider {
+  text-align: center;
+}
+
+.text {
+  z-index: 1;
+}
