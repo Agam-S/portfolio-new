@@ -16,3 +16,6 @@ body {
   background-color: var(--background-dark) !important;
   color: var(--text-light) !important;
 }
+body:hover {
+  cursor: none !important;
+}
