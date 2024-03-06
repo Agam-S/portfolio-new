@@ -1,10 +1,10 @@
 .cursor {
   position: fixed;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 25px 10px 25px 10px;
-  border-color: transparent transparent var(--cursor-color) transparent;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--cursor-color);
+  border-radius: 50%;
+  background-color: transparent;
   pointer-events: none !important;
   z-index: 9999;
   transition: background-color 0.3s ease;

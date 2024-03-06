@@ -9,6 +9,7 @@ function App() {
     <>
       <Cursor />
       <Nav />
+
       <Home />
       <AboutMe />
     </>

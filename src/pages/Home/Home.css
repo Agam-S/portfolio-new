@@ -10,7 +10,6 @@
   width: 300px;
   height: 300px;
   background: var(--accent-red);
-  margin-top: 20px;
   z-index: -1;
 }
 .home {
@@ -18,11 +17,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .container {
   position: relative;
+  margin-top: -100px;
+  height: 100dvh;
 }
 
 .textSlider {
@@ -31,4 +32,5 @@
 
 .text {
   z-index: 1;
+  margin-top: 500px;
 }
