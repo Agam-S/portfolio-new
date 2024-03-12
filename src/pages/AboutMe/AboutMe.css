@@ -1,3 +1,12 @@
-.container {
+.containerAboutMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 100dvh;
+}
+.textAboutMe {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 10rem 0 10rem;
 }
