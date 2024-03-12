@@ -1,12 +1,53 @@
 .containerAboutMe {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
   height: 100dvh;
 }
-.textAboutMe {
-  font-size: 1.5rem;
+
+.aboutme {
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
-  margin: 0 10rem 0 10rem;
+  margin-bottom: 60px;
+}
+
+.textAboutMe {
+  font-size: 1.3rem;
+  text-align: left;
+  width: 45%;
+  margin-right: 50px;
+  font-weight: 300 !important;
+}
+
+.techSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 45%;
+}
+
+.techTitle {
+  font-size: 1.5rem;
+  font-weight: 200 !important;
+  margin-bottom: 10px;
+}
+
+.techIcons {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
 }
