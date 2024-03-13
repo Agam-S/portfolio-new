@@ -22,26 +22,19 @@ const Nav = () => {
           smooth={true}
           duration={500}
           className="nav-link"
+          onClick={() => handleNavItemClick(section.toLowerCase())}
         >
           <motion.div
             key={section}
-            whileHover={{ scale: 1.5 }}
+            whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.5 }}
             onClick={() => handleNavItemClick(section.toLowerCase())}
-            className={`nav-dot ${
-              selectedSection === section.toLowerCase() ? "active" : ""
+            className={`label ${
+              selectedSection === section.toLowerCase() ? "active" : "inactive"
             }`}
+            style={{ rotate: -90 }}
           >
-            {selectedSection === section.toLowerCase() && (
-              <motion.div
-                className="dot-label"
-                initial={{ opacity: 0, y: -10, rotate: -90 }}
-                animate={{ opacity: 1, x: -120, y: -10 }}
-                transition={{ duration: 0.5 }}
-              >
-                {section}
-              </motion.div>
-            )}
+            <span>{section}</span>
           </motion.div>
         </Link>
       ))}

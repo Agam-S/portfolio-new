@@ -1,11 +1,8 @@
 import "./AboutMe.css";
 import { motion, useAnimation } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const AboutMe = () => {
-  const controls = useAnimation();
-
-  const [tooltipMap, setTooltipMap] = useState(false);
   const icons = [
     {
       src: "https://img.icons8.com/color/48/000000/html-5--v1.png",
@@ -148,17 +145,33 @@ const AboutMe = () => {
       text: "Trello",
     },
   ];
+  const controls = useAnimation();
+  const [tooltipMap, setTooltipMap] = useState(false);
 
   const handleScroll = () => {
     const yOffset = window.pageYOffset;
-    console.log(yOffset);
     if (yOffset > 650) {
       controls.start({ opacity: 1, scale: 1, x: 0 });
     } else {
       controls.start({ opacity: 0, scale: 0.8, x: -500 });
     }
   };
-  window.addEventListener("scroll", handleScroll);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const yOffset = window.pageYOffset;
+      if (yOffset > 650) {
+        controls.start({ opacity: 1, scale: 1, x: 0 });
+      } else {
+        controls.start({ opacity: 0, scale: 0.8, x: -500 });
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
 
   const handleHover = (key) => {
     setTooltipMap((prevMap) => ({ ...prevMap, [key]: true }));

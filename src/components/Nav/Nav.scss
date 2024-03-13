@@ -8,34 +8,25 @@
   z-index: 999;
 }
 
-.nav-dot {
-  width: 20px;
-  height: 20px;
-  background-color: var(--highlight-red);
-  margin-bottom: 25px;
-  border-radius: 50%;
+.label {
+  margin-bottom: 150px;
   cursor: none;
   position: relative;
-}
-
-.dot-label {
-  position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  display: flex;
+  color: var(--highlight-red);
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s;
   font-size: x-large;
-  letter-spacing: 5px;
+  padding: 10px;
 }
-.nav-dot.active .dot-label {
-  opacity: 1;
+.label:hover {
+  border-top: 1px solid var(--highlight-red);
+}
+.active {
+  color: var(--secondary-background);
+  border-top: 1px solid var(--highlight-red);
 }
 
-.active {
-  background-color: var(--secondary-background);
+.inactive {
+  color: var(--highlight-red);
 }
