@@ -1,7 +1,14 @@
+.p-div {
+  margin-top: -200px;
+}
+
 .projects-container {
   margin: 0 auto;
   height: 100dvh;
   text-align: center;
+}
+.projects {
+  margin-top: -100px;
 }
 .projects-main {
   display: flex;
@@ -10,53 +17,31 @@
   margin: 0 auto;
   text-align: center;
   margin-top: 60px;
-  gap: 100px;
-
-  .project-card {
-    flex: 0 0 35%;
-    margin: 2.5%;
-    width: 20%;
-    height: 300px;
-    padding: 20px;
-    background-color: var(--background-dark);
-    color: var(--text-light);
-    border-radius: 25px;
-    box-shadow: 0px 3px 3px 3px var(--accent-red);
-    overflow: hidden;
-
-    h2,
-    h3,
-    p,
-    a {
-      margin-bottom: 10px;
-    }
-
-    button {
-      display: none;
-      background-color: var(--accent-red);
-      color: var(--text-light);
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: var(--button-hover);
-      }
-    }
-
-    &.open {
-      button {
-        display: block;
-      }
-    }
-  }
+  gap: 50px;
 }
+.project-card {
+  margin: 2.5%;
+  width: 20%;
+  height: 200px;
+  padding: 20px;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  border-radius: 25px;
+  box-shadow: 0px 3px 3px 3px var(--accent-red);
+  overflow: hidden;
+  font-weight: 300 !important;
+}
+.h2,
+.label,
+.p {
+  margin-bottom: 10px;
+}
+
 .h1 {
   text-align: center;
 }
 .popup-card {
-  width: 70%;
+  width: 50%;
   height: 500px;
   padding: 50px;
   background-color: var(--background-dark);
@@ -65,6 +50,7 @@
   box-shadow: 0px 10px 10px 10px var(--accent-red);
   overflow: auto;
   z-index: 100;
+  font-weight: 300 !important;
 }
 .overlay {
   position: fixed;
@@ -82,4 +68,29 @@
 .overlay.active {
   opacity: 1;
   visibility: visible;
+}
+button {
+  background-color: var(--accent-red);
+  color: var(--text-light);
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+
+  &:hover {
+    background-color: var(--button-hover);
+    cursor: none;
+  }
+}
+.buttons {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.label {
+  font-size: 1.2rem;
+  background: var(--accent-red);
+}
+.p {
+  margin-bottom: 10px;
 }

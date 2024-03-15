@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import "./Nav.scss";
 
-const sections = ["Home", "AboutMe", "Projects", "Contact"];
+const sections = ["Home", "AboutMe", "Projects", "Connect"];
 
 const Nav = () => {
-  const [selectedSection, setSelectedSection] = useState(null);
+  const [selectedSection, setSelectedSection] = useState("Home");
 
   const handleNavItemClick = (section) => {
     setSelectedSection(section);
@@ -30,10 +30,9 @@ const Nav = () => {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.5 }}
             onClick={() => handleNavItemClick(section.toLowerCase())}
-            className={`label ${
+            className={`label-nav ${
               selectedSection === section.toLowerCase() ? "active" : "inactive"
             }`}
-            style={{ rotate: -90 }}
           >
             <span>{section}</span>
           </motion.div>
