@@ -206,7 +206,7 @@ const AboutMe = () => {
         <motion.p className="textAboutMe">
           Hey! I am Agam. I am a full-stack developer. <br></br>
           <br></br>I specialise in the backend and web appliaction development.
-          Currently, I have 4 years of experience with web development.{" "}
+          Currently, I have 3 years of experience with web development.{" "}
           <br></br>
           <br></br>I have created several full-stack applications both for
           personal projects and as part of a team.<br></br>

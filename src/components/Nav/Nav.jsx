@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import "./Nav.scss";
 
-const sections = ["Home", "AboutMe", "Contact"];
+const sections = ["Home", "AboutMe", "Projects", "Contact"];
 
 const Nav = () => {
   const [selectedSection, setSelectedSection] = useState(null);
