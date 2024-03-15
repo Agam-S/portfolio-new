@@ -4,6 +4,7 @@ import Cursor from "./components/Cursor/Cursor";
 import Nav from "./components/Nav/Nav";
 import AboutMe from "./pages/AboutMe/AboutMe";
 import Projects from "./pages/Projects/Projects";
+import Connect from "./pages/Connect/Connect";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <Home />
       <AboutMe />
       <Projects />
+      <Connect />
     </>
   );
 }

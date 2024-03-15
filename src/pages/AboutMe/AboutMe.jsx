@@ -148,15 +148,6 @@ const AboutMe = () => {
   const controls = useAnimation();
   const [tooltipMap, setTooltipMap] = useState(false);
 
-  const handleScroll = () => {
-    const yOffset = window.pageYOffset;
-    if (yOffset > 650) {
-      controls.start({ opacity: 1, scale: 1, x: 0 });
-    } else {
-      controls.start({ opacity: 0, scale: 0.8, x: -500 });
-    }
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const yOffset = window.pageYOffset;

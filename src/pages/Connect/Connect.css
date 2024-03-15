@@ -1,0 +1,12 @@
+.connect-container {
+  height: 60dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.buttons-connect {
+  padding: 20px;
+  gap: 20px;
+  display: flex;
+  font-size: large;
+}

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./Projects.scss";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const Projects = () => {
   const popupCardRef = useRef(null);
@@ -15,9 +15,28 @@ const Projects = () => {
     if (openId) {
       setTimeout(() => {
         popupCardRef.current.scrollIntoView({ behavior: "smooth" });
+        window.scrollBy(0, -65);
       }, 1000);
     }
   }, [openId]);
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const yOffset = window.pageYOffset;
+      if (yOffset > 1600) {
+        controls.start({ opacity: 1, scale: 1, x: 0, y: 0 });
+      } else {
+        controls.start({ opacity: 0, scale: 0.5, x: 500, y: -500 });
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
 
   const items = [
     {
@@ -31,27 +50,31 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Project 2",
-      subtitle: "Subtitle 2",
+      title: "NBA Prediction App",
+      subtitle:
+        "Angular + Typescript, MongoDB, ExpressJS, Python, Scikit-learn, Auth0",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut sapien euismod, tincidunt sapien quis, aliquam sapien. Sed ut sapien euismod, tincidunt sapien quis, aliquam sapien.",
-      link: "https://www.google.com/",
+        "Crafted as part of the Diploma of IT (Advanced Programming), this project offered users the opportunity to construct personalized NBA teams, complete with their preferred players, and witness their dream teams in action. A standout feature is the utilization of a machine learning algorithm, powered by Python with Scikit-Learn, to compare two teams based on meticulously curated NBA player data spanning two years. The project's API boasts dual functionality: authentication verification via Auth0 and seamless CRUD operations tailored to each logged-in user. Furthermore, a Python script integrated within ExpressJS dynamically computes team win percentages, facilitating comprehensive team comparisons directly on the frontend.",
+      link: "https://github.com/Agam-S/DIP-Sem1-TeamProj",
     },
     {
       id: 3,
-      title: "Project 3",
-      subtitle: "Subtitle 3",
+      title: "Request Invite Form Demo",
+      subtitle: "React + Typescript",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut sapien euismod, tincidunt sapien quis, aliquam sapien. Sed ut sapien euismod, tincidunt sapien quis, aliquam sapien.",
-      link: "https://www.google.com/",
+        "This portfolio piece demonstrates my proactive approach to understanding employer interview processes. Utilizing React and TypeScript, I developed a Request Invite Form Demo based on common interview question challenges. The project showcases my frontend development skills and problem-solving abilities in a practical manner. With a user-friendly interface and smooth functionality, the demo underscores my attention to detail and commitment to delivering effective solutions. By developing this demo, I aim to provide a practical solution for job seekers while illustrating my flexibility and proficiency in addressing industry challenges.",
+      link: "https://github.com/Agam-S/request-invite-demo",
+      live: "https://endearing-banoffee-6b432e.netlify.app/",
     },
     {
       id: 4,
-      title: "Project 4",
-      subtitle: "Subtitle 4",
+      title: "Donation App",
+      subtitle:
+        "React + TypeScript, Firebase, ExpressJS, GoogleAPI, PayPal Bootstrap, Azure",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut sapien euismod, tincidunt sapien quis, aliquam sapien. Sed ut sapien euismod, tincidunt sapien quis, aliquam sapien.",
-      link: "https://www.google.com/",
+        "Developed for a real client as part of the Diploma of IT program, this web application facilitates user donations to organizations and donate to different products. PayPal integration ensures secure transactions, while an email bot automates payment notifications. Primarily focused on backend development, I spearheaded the creation of email bots, managed databases, and conducted security testing to identify potential vulnerabilities. Additionally, I contributed to frontend development. Azure Kanban facilitated efficient backlog management and planning, complementing our Agile methodology. We conducted client meetings and retrospectives to ensure project alignment and continuous improvement. This project showcases my versatility in backend and frontend development, as well as my commitment to secure and agile project management practices.",
+      link: "https://github.com/Agam-S/edable-donors",
+      live: "https://www.edable.org.au/donations",
     },
   ];
 
@@ -65,7 +88,7 @@ const Projects = () => {
         <div className="projects-container">
           <h1 className="title">Projects</h1>
           <div className={`overlay ${openId ? "active" : ""}`}></div>
-          <div className="projects-main">
+          <motion.div className="projects-main" animate={controls}>
             {items.map((item) => (
               <motion.div
                 key={item.id}
@@ -131,7 +154,7 @@ const Projects = () => {
                 </div>
               </motion.div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
