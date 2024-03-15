@@ -19,6 +19,7 @@ const Nav = () => {
           key={section}
           to={section.toLowerCase()}
           spy={true}
+          activeClass="active-scroll"
           smooth={true}
           duration={500}
           className="nav-link"

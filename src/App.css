@@ -1,0 +1,8 @@
+#navbar-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: var(--button-hover) !important;
+  transform-origin: 50%;
+}

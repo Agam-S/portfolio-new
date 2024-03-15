@@ -1,11 +1,11 @@
 :root {
   --background-dark: #2b272f;
   --text-light: #fefffe;
-  --accent-red: #cb0001;
-  --highlight-red: #f70101;
-  --accent-maroon: #b80113;
+  --accent-red: #004cb8;
+  --highlight-red: #007bff;
+  --accent-maroon: #003366;
   --secondary-background: #898292;
-  --button-hover: #8c151c;
+  --button-hover: #0069d9;
   --cursor-color: #a99e94;
 }
 body {
