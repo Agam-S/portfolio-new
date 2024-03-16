@@ -109,7 +109,7 @@ const Projects = () => {
                 className="popup-card"
                 ref={popupCardRef}
                 initial={{ opacity: 0, y: "-500%", x: "300%" }}
-                animate={{ opacity: 1, y: "-70%", x: "-25%" }}
+                animate={{ opacity: 1, y: "-80%", x: "0%" }}
                 exit={{ opacity: 0, y: "-50%" }}
               >
                 <h3 className="h3">{items[openId - 1].title}</h3>

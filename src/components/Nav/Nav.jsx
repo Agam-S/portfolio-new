@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import "./Nav.scss";
@@ -11,9 +11,17 @@ const Nav = () => {
   const handleNavItemClick = (section) => {
     setSelectedSection(section);
   };
+  const [fix, setFix] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setFix(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 
   return (
-    <div className="vertical-navbar">
+    <div className={fix ? "sticky vertical-navbar" : "vertical-navbar"}>
       {sections.map((section) => (
         <Link
           key={section}

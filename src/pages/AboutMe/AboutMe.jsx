@@ -151,7 +151,9 @@ const AboutMe = () => {
   useEffect(() => {
     const handleScroll = () => {
       const yOffset = window.pageYOffset;
-      if (yOffset > 650) {
+      const threshold = window.innerWidth <= 900 ? 90 : 650;
+      console.log(yOffset);
+      if (yOffset > threshold) {
         controls.start({ opacity: 1, scale: 1, x: 0 });
       } else {
         controls.start({ opacity: 0, scale: 0.8, x: -500 });

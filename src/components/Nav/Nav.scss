@@ -1,13 +1,13 @@
 .vertical-navbar {
   background-color: #000000;
-  position: fixed;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   width: 100%;
-  gap: 50px;
+  gap: 20px;
+  position: fixed;
 }
 
 .active-scroll div {
@@ -32,4 +32,14 @@
 
 .inactive {
   color: var(--highlight-red);
+}
+@media (max-width: 768px) {
+  .vertical-navbar {
+    justify-content: left;
+  }
+
+  .label-nav {
+    padding: 10px;
+    font-size: medium;
+  }
 }

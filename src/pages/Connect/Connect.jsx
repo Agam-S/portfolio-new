@@ -36,6 +36,8 @@ const Connect = () => {
             <motion.button className="email-button">Email</motion.button>
           </a>
         </div>
+        <br />
+        <div className="p-end">Thank you for looking at my portfolio!</div>
       </div>
     </>
   );

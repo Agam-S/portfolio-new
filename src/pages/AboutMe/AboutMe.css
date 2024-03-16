@@ -1,39 +1,40 @@
 .containerAboutMe {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  height: 100dvh;
+  height: 100vh;
 }
 
 .aboutme {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .textAboutMe {
   font-size: 1.3rem;
   text-align: left;
-  width: 45%;
-  margin-right: 50px;
+  max-width: 550px;
+  margin-bottom: 50px;
   font-weight: 300 !important;
 }
 
 .techSection {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 45%;
+  align-items: right;
+  max-width: 350px;
 }
 
 .techTitle {
   font-size: 1.5rem;
   font-weight: 200 !important;
   margin-bottom: 10px;
+  text-align: right;
+  margin-right: -60px;
 }
 
 .techIcons {
@@ -42,8 +43,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 20px;
+  width: 150%;
+  padding: 10px;
 }
 
 img {
@@ -55,6 +56,7 @@ img {
   .containerAboutMe {
     flex-direction: column;
     align-items: center;
+    display: block;
   }
 
   .textAboutMe,
@@ -70,5 +72,27 @@ img {
   img {
     width: 30px;
     height: 30px;
+  }
+}
+@media (max-width: 790px) {
+  .aboutme {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .textAboutMe {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .techTitle {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
   }
 }
