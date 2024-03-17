@@ -7,6 +7,7 @@
   height: 100vh;
   padding: 20px;
   text-align: center;
+  overflow-x: hidden;
 }
 .projects {
   margin-top: -100px;
@@ -45,7 +46,8 @@
   color: var(--text-light);
   border-radius: 25px;
   box-shadow: 0px 10px 10px 10px var(--accent-red);
-  overflow: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
   z-index: 100;
   font-weight: 300 !important;
 }
@@ -96,6 +98,7 @@ button {
 .label {
   font-size: 1.2rem;
   background: var(--accent-red);
+  border-radius: 10px;
 }
 
 .p {
@@ -112,5 +115,15 @@ button {
   .popup-card {
     width: 90%;
     max-width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .projects {
+    margin-top: 0;
+  }
+
+  .project-card {
+    flex: 1 0 100%;
+    max-width: none;
   }
 }

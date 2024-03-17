@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import "./Projects.scss";
 import { motion, useAnimation } from "framer-motion";
 
@@ -22,8 +22,13 @@ const Projects = () => {
 
   const controls = useAnimation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth <= 600) {
+        controls.start({ opacity: 1, scale: 1, x: 0 });
+        return;
+      }
+
       const yOffset = window.pageYOffset;
       if (yOffset > 1600) {
         controls.start({ opacity: 1, scale: 1, x: 0, y: 0 });
@@ -89,29 +94,8 @@ const Projects = () => {
           <h1 className="title">Projects</h1>
           <div className={`overlay ${openId ? "active" : ""}`}></div>
           <motion.div className="projects-main" animate={controls}>
-            {items.map((item) => (
-              <motion.div
-                key={item.id}
-                className="project-card"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => {
-                  toggleOpen(item.id);
-                }}
-              >
-                <motion.h3 className="h3">{item.title}</motion.h3>
-                <motion.label className="label">{item.subtitle}</motion.label>
-                <p className="p">Click for more info.</p>
-              </motion.div>
-            ))}
             {openId && (
-              <motion.div
-                className="popup-card"
-                ref={popupCardRef}
-                initial={{ opacity: 0, y: "-500%", x: "300%" }}
-                animate={{ opacity: 1, y: "-80%", x: "0%" }}
-                exit={{ opacity: 0, y: "-50%" }}
-              >
+              <motion.div className="popup-card" ref={popupCardRef}>
                 <h3 className="h3">{items[openId - 1].title}</h3>
                 <label className="label">{items[openId - 1].subtitle}</label>
                 <p className="p">{items[openId - 1].description}</p>
@@ -154,6 +138,21 @@ const Projects = () => {
                 </div>
               </motion.div>
             )}
+            {items.map((item) => (
+              <motion.div
+                key={item.id}
+                className="project-card"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  toggleOpen(item.id);
+                }}
+              >
+                <motion.h3 className="h3">{item.title}</motion.h3>
+                <motion.label className="label">{item.subtitle}</motion.label>
+                <p className="p">Click for more info.</p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </div>

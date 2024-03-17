@@ -4,7 +4,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .aboutme {
@@ -25,8 +25,8 @@
 .techSection {
   display: flex;
   flex-direction: column;
-  align-items: right;
-  max-width: 350px;
+  align-items: center;
+  max-width: 300px;
 }
 
 .techTitle {
@@ -44,13 +44,37 @@
   justify-content: center;
   align-items: center;
   width: 150%;
-  padding: 10px;
 }
 
 img {
   width: 50px;
   height: 50px;
   margin: 5px;
+}
+@media (max-width: 1100px) {
+  .containerAboutMe {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center !important;
+  }
+
+  .textAboutMe,
+  .techSection {
+    width: 100%;
+    margin-right: 0;
+    order: 1;
+  }
+
+  .techIcons {
+    justify-content: space-around;
+    order: 2;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
 }
 @media (max-width: 600px) {
   .containerAboutMe {
@@ -62,11 +86,17 @@ img {
   .textAboutMe,
   .techSection {
     width: 100%;
-    margin-right: 0;
+    margin-right: 0px;
   }
-
+  .techSection {
+    margin-top: 100px;
+  }
   .techIcons {
-    justify-content: space-around;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 60px;
   }
 
   img {

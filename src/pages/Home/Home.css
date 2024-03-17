@@ -34,3 +34,17 @@
   z-index: 1;
   margin-top: 500px;
 }
+@media (max-width: 600px) {
+  .home h1 {
+    font-size: x-large;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+  }
+
+  .container {
+    margin-top: 0;
+  }
+}

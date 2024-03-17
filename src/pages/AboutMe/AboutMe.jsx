@@ -1,6 +1,6 @@
 import "./AboutMe.css";
 import { motion, useAnimation } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 
 const AboutMe = () => {
   const icons = [
@@ -147,13 +147,15 @@ const AboutMe = () => {
   ];
   const controls = useAnimation();
   const [tooltipMap, setTooltipMap] = useState(false);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth <= 600) {
+        controls.start({ opacity: 1, scale: 1, x: 0 });
+        return;
+      }
+
       const yOffset = window.pageYOffset;
-      const threshold = window.innerWidth <= 900 ? 90 : 650;
-      console.log(yOffset);
-      if (yOffset > threshold) {
+      if (yOffset > 650) {
         controls.start({ opacity: 1, scale: 1, x: 0 });
       } else {
         controls.start({ opacity: 0, scale: 0.8, x: -500 });
@@ -199,9 +201,7 @@ const AboutMe = () => {
       <motion.div className="containerAboutMe" animate={controls}>
         <motion.p className="textAboutMe">
           Hey! I am Agam. I am a full-stack developer. <br></br>
-          <br></br>I specialise in the backend and web appliaction development.
-          Currently, I have 3 years of experience with web development.{" "}
-          <br></br>
+          <br></br>I have three years of web development experience.<br></br>
           <br></br>I have created several full-stack applications both for
           personal projects and as part of a team.<br></br>
           <br></br>I am excited to show you my projects.
