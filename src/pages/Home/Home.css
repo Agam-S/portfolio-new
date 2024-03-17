@@ -47,4 +47,7 @@
   .container {
     margin-top: 0;
   }
+  .text {
+    margin-top: 300px;
+  }
 }

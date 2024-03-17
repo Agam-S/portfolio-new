@@ -9,7 +9,7 @@
   text-align: center;
 }
 .projects {
-  margin-top: -100px;
+  margin-top: 50px;
 }
 .projects-main {
   display: flex;
@@ -118,7 +118,11 @@ button {
 }
 @media (max-width: 600px) {
   .projects {
-    margin-top: 0;
+    margin-top: 50;
+  }
+  .projects-container {
+    margin-top: 150px;
+    margin-bottom: 150px;
   }
 
   .project-card {
