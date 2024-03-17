@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import "./Connect.css";
-import resume from "../../assets/agam-singh-res-online-updated.pdf";
+import resume from "../../assets/Agam_Singh_Resume.pdf";
 
 const Connect = () => {
   return (

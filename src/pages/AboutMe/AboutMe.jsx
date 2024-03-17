@@ -1,6 +1,6 @@
 import "./AboutMe.css";
 import { motion, useAnimation } from "framer-motion";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 const AboutMe = () => {
   const icons = [
